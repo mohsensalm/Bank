@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Source\Data\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank.EndPoint.App", "Source\Presentation\Bank.EndPoint.App\Bank.EndPoint.App.csproj", "{7A93838C-0D2D-4D09-A0A0-20DD8367975E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Source\Data\Application\Application.csproj", "{B461E54E-53FF-4A51-B765-46B97898D507}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{7A93838C-0D2D-4D09-A0A0-20DD8367975E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A93838C-0D2D-4D09-A0A0-20DD8367975E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A93838C-0D2D-4D09-A0A0-20DD8367975E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B461E54E-53FF-4A51-B765-46B97898D507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B461E54E-53FF-4A51-B765-46B97898D507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B461E54E-53FF-4A51-B765-46B97898D507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B461E54E-53FF-4A51-B765-46B97898D507}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{0C38BDBC-4B40-47A9-A244-B2E3FAA614A1} = {ADF8378E-C6F2-4F5B-BADD-C128DB6A2B29}
 		{FF4A19C7-103F-4C54-995D-AE0EB407E5F2} = {A89FE620-5A54-40D7-92CA-5B7B3219FB8C}
 		{7A93838C-0D2D-4D09-A0A0-20DD8367975E} = {E84BBBD0-C298-432F-AF21-DD019FCA9E85}
+		{B461E54E-53FF-4A51-B765-46B97898D507} = {A89FE620-5A54-40D7-92CA-5B7B3219FB8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64F76E74-3042-4500-95E6-88C053CC67DC}
