@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 
 namespace Application.Base.Entity.dbo
 {
-    internal class StatusRepository : BaseRepository<Status>, IStatusRepository
+    internal class StatusRepository : BaseRepository<Status> , IStatusRepository
     {
         private ISession session;
 
-        public StatusRepository(ISession session)
+        public StatusRepository(ISession session) : base(session)
         {
-            this.session = session;
+
         }
+       
     }
 }

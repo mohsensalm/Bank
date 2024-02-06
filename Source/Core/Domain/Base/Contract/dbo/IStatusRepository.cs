@@ -9,7 +9,6 @@ namespace Domain.Base.Contract.dbo
 {
 
     public interface IStatusRepository : IBaseRepository<Status>
-
     {
 
 

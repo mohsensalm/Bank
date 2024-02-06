@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddNHibernate("data source =. ; initial catalog = Bank-2023-11-30-17-26;");
+builder.Services.AddNHibernate("data source =. ; initial catalog = Bank-2023-11-30-17-26 ; Trusted_Connection=True;");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -35,7 +35,7 @@ public class UnitOfWork : IUnitOfWork
         }
     }
 
-    public IStatusRepository RoleRepository
+    public IStatusRepository StatusRepository
     {
         get
         {
@@ -43,8 +43,6 @@ public class UnitOfWork : IUnitOfWork
             return _StatusRepository;
         }
     }
-
-    public IStatusRepository StatusRepository => throw new NotImplementedException();
 
     public void Commit()
     {

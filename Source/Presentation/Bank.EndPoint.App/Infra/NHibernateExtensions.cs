@@ -2,6 +2,7 @@
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
+using NHibernate.Driver;
 using NHibernate.Mapping.ByCode;
 using System.Configuration;
 
@@ -15,18 +16,19 @@ public static class NHibernateExtensions
         mapper.AddMappings(typeof(NHibernateExtensions).Assembly.ExportedTypes);
         HbmMapping domainMapping = mapper.CompileMappingForAllExplicitlyAddedEntities();
 
-        var config = new NHibernate.Cfg.Configuration();
-        config.AddAssembly("Persistence");
+        //var config = new NHibernate.Cfg.Configuration();
+        //config.AddAssembly("Persistence");
 
         var configuration = new NHibernate.Cfg.Configuration();
         configuration.DataBaseIntegration(c =>
         {
+            //c.Driver<MicrosoftDataSqlClientDriver>();
             c.Dialect<NHibernate.Dialect.MsSql2012Dialect>();
             c.ConnectionString = connectionString;
-            c.KeywordsAutoImport = Hbm2DDLKeyWords.AutoQuote;
-            c.SchemaAction = SchemaAutoAction.Validate;
-            c.LogFormattedSql = true;
-            c.LogSqlInConsole = true;
+            //c.KeywordsAutoImport = Hbm2DDLKeyWords.AutoQuote;
+            //c.SchemaAction = SchemaAutoAction.Validate;
+            //c.LogFormattedSql = true;
+            //c.LogSqlInConsole = true;
         });
         configuration.AddMapping(domainMapping);
 
@@ -40,86 +42,3 @@ public static class NHibernateExtensions
     }
 }
 
-//public abstract class BaseEntity
-//{
-
-//}
-
-//public interface  IBAseEntity
-//{
-
-//}
- 
-
-//public interface ILoanRepository : IGenericRepository<Loan>
-//{
-//    bool IsAvilable(); 
-//}
-
-//public class LoanRepository : BaseRepository<Loan>, ILoanRepository
-//{
-//    public bool IsAvilable()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
-
-//public interface IStatusRepository
-//{
-//    //empty
-//}
-
-
-
-//public class BaseRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity    ///  BAseEntity ,IBAseEntity  ,
-//{
-   
-//    public void Add(TEntity entity)
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public bool Delete(int id)
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public void Edit(TEntity entity)
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public TEntity Get(int id)
-//    {
-//        throw new NotImplementedException();
-//    }
-
-//    public IQueryable<TEntity> GetAll()
-//    {
-//        throw new NotImplementedException();
-//    }
-//}
-
-//public interface IGenericRepository<TEntity> where TEntity : BaseEntity 
-//{
-//    void Add(TEntity entity);
-
-//    void Edit(TEntity entity);
-
-//    TEntity Get(int id);
-
-//    bool Delete(int id );
-
-//    IQueryable<TEntity> GetAll();
-
-
-//}
-
-
-
-//interface IUnitOFWork
-//{
-//    void Save();
-//    void Comite();
-//    void RoleBack();
-//}
