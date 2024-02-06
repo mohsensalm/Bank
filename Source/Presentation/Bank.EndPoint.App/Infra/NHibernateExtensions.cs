@@ -40,111 +40,86 @@ public static class NHibernateExtensions
     }
 }
 
-public abstract class BaseEntity
-{
+//public abstract class BaseEntity
+//{
 
-}
+//}
 
-public interface  IBAseEntity
-{
+//public interface  IBAseEntity
+//{
 
-}
+//}
+ 
 
+//public interface ILoanRepository : IGenericRepository<Loan>
+//{
+//    bool IsAvilable(); 
+//}
 
-public interface ILoanRepository : IGenericRepository<Loan>
-{
-    bool IsAvilable(); 
-}
+//public class LoanRepository : BaseRepository<Loan>, ILoanRepository
+//{
+//    public bool IsAvilable()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
 
-public class LoanRepository : BaseRepository<Loan>, ILoanRepository
-{
-    public bool IsAvilable()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-public interface IStatusRepository
-{
-    //empty
-}
-
-
-
-public class BaseRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity    ///  BAseEntity ,IBAseEntity  ,
-{
-    public BaseRepository()
-    {
-            
-    }
-    public void Add(TEntity entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public bool Delete(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void Edit(TEntity entity)
-    {
-        throw new NotImplementedException();
-    }
-
-    public TEntity Get(int id)
-    {
-        throw new NotImplementedException();
-    }
-
-    public IQueryable<TEntity> GetAll()
-    {
-        throw new NotImplementedException();
-    }
-}
-
-public interface IGenericRepository<TEntity> where TEntity : BaseEntity 
-{
-    void Add(TEntity entity);
-
-    void Edit(TEntity entity);
-
-    TEntity Get(int id);
-
-    bool Delete(int id );
-
-    IQueryable<TEntity> GetAll();
-
-
-}
+//public interface IStatusRepository
+//{
+//    //empty
+//}
 
 
 
-interface IUnitOFWork
-{
-    void Save();
-    void Comite();
-    void RoleBack();
-}
+//public class BaseRepository<TEntity> : IGenericRepository<TEntity> where TEntity : BaseEntity    ///  BAseEntity ,IBAseEntity  ,
+//{
+   
+//    public void Add(TEntity entity)
+//    {
+//        throw new NotImplementedException();
+//    }
 
-class UnitOfWork : IUnitOFWork
-{
-    public ILoanRepository  loanRepository { get; }
+//    public bool Delete(int id)
+//    {
+//        throw new NotImplementedException();
+//    }
 
-    
+//    public void Edit(TEntity entity)
+//    {
+//        throw new NotImplementedException();
+//    }
 
-    public void Comite()
-    {
-        throw new NotImplementedException();
-    }
+//    public TEntity Get(int id)
+//    {
+//        throw new NotImplementedException();
+//    }
 
-    public void RoleBack()
-    {
-        throw new NotImplementedException();
-    }
+//    public IQueryable<TEntity> GetAll()
+//    {
+//        throw new NotImplementedException();
+//    }
+//}
 
-    public void Save()
-    {
-        throw new NotImplementedException();
-    }
-}
+//public interface IGenericRepository<TEntity> where TEntity : BaseEntity 
+//{
+//    void Add(TEntity entity);
+
+//    void Edit(TEntity entity);
+
+//    TEntity Get(int id);
+
+//    bool Delete(int id );
+
+//    IQueryable<TEntity> GetAll();
+
+
+//}
+
+
+
+//interface IUnitOFWork
+//{
+//    void Save();
+//    void Comite();
+//    void RoleBack();
+//}
