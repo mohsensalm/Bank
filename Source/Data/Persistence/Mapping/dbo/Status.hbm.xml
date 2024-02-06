@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+
+<class name="Status" table="Status" schema="dbo" Guid="c48fd2da-c94c-4d15-b14e-e4e3adac78ef">
+	<id name="ID" type="Int32" ValidateRequired="true" Guid="78912ea1-b57f-4c0f-a2a9-057311f1991b">
+		<column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+		<generator class="identity" />
+	</id>
+	<property name="Title" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="04bd1380-30a8-4662-a681-f623c935187a">
+		<column name="Title" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+	</property>
+	<many-to-one name="StatusType_SatusType" class="StatusType" AssociationGuid="f8a852a5-e1cf-4cf4-a7eb-14697ced6c6d" Guid="42ebd057-6e7b-48f5-ba9f-982401502762">
+		<column name="SatusType" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+	</many-to-one>
+	<set name="Cofers_Status" inverse="true" generic="true" AssociationGuid="91c90960-6624-4560-8b5b-632f7dae5a32" Guid="676cb2d3-5bd4-4e03-85e8-a66b2231cec1">
+		<key>
+			<column name="Status" />
+		</key>
+		<one-to-many class="Cofer" />
+	</set>
+	<set name="Installments_Status" inverse="true" generic="true" AssociationGuid="5c59043b-feb0-4770-aa64-80512e7be357" Guid="a386a1b7-db11-4432-9d00-a5871f9a6045">
+		<key>
+			<column name="Status" />
+		</key>
+		<one-to-many class="Installment" />
+	</set>
+	<set name="LateLoans_Status" inverse="true" generic="true" AssociationGuid="8c9ff0b5-b442-45a5-963e-6e0366df5260" Guid="1d7051f7-6b29-4674-80e0-a30e399de8a6">
+		<key>
+			<column name="Status" />
+		</key>
+		<one-to-many class="LateLoan" />
+	</set>
+	<set name="Loans_Status" inverse="true" generic="true" AssociationGuid="b30e5561-e80f-4875-bbc5-639ba1e1f7f7" Guid="6b25f18e-c16c-4405-b344-2dc0fc12cfb5">
+		<key>
+			<column name="Status" />
+		</key>
+		<one-to-many class="Loan" />
+	</set>
+	<set name="LoanInnigs_Status" inverse="true" generic="true" AssociationGuid="621634d5-14dc-4f42-a777-b1169213c953" Guid="245b0547-3a21-488e-bf82-4f0570286fe5">
+		<key>
+			<column name="Status" />
+		</key>
+		<one-to-many class="LoanInnig" />
+	</set>
+	<set name="MemberOfs_Status" inverse="true" generic="true" AssociationGuid="245a1957-ffb3-4d9d-a28d-f4e33cff9e9c" Guid="496312ae-2eec-413f-850d-f8695ad7654d">
+		<key>
+			<column name="Status" />
+		</key>
+		<one-to-many class="MemberOf" />
+	</set>
+	<set name="UserAccounts_UserID" inverse="true" generic="true" AssociationGuid="1c637ecf-66f6-4cbe-96ea-c17e42cb17b3" Guid="f4e2e721-0512-4546-bcc6-7b6adf3cdca8">
+		<key>
+			<column name="UserID" />
+		</key>
+		<one-to-many class="UserAccount" />
+	</set>
+</class>

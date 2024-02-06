@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<class name="Loan" table="Loan" schema="dbo" Guid="f42e30b7-6a66-4e4e-b52f-4e0090f34584">
+	<id name="ID" type="Int32" ValidateRequired="true" Guid="39a6dd3f-7de9-4700-8706-d20c3b49f36f">
+		<column name="ID" not-null="true" precision="10" scale="0" sql-type="int" unicode="false" />
+		<generator class="identity" />
+	</id>
+	<property name="Name" type="String" nullable="true" ValidateMaxLength="50" ValidateRequired="false" Guid="5b5a33f3-daff-4b6e-bab3-46d2a3525f4e">
+		<column name="Name" not-null="false" length="50" sql-type="nvarchar" unicode="true" />
+	</property>
+	<property name="TotalPrice" type="String" nullable="true" ValidateMaxLength="20" ValidateRequired="false" Guid="d1d9765d-4384-49c4-9be3-f1917110320d">
+		<column name="TotalPrice" not-null="false" length="20" sql-type="nvarchar" unicode="true" />
+	</property>
+	<property name="PricePerIns" type="String" nullable="true" ValidateMaxLength="20" ValidateRequired="false" Guid="d209db24-d816-4748-a660-7077cc3d8230">
+		<column name="PricePerIns" not-null="false" length="20" sql-type="nvarchar" unicode="true" />
+	</property>
+	<property name="InstallmentNum" type="Int32" nullable="true" ValidateRequired="false" Guid="115f7cd4-8792-4e61-9cbb-661de34e6ff0">
+		<column name="InstallmentNum" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+	</property>
+	<property name="MemberNum" type="Int32" nullable="true" ValidateRequired="false" Guid="4a303671-14be-4a30-b0e6-e0f8e5f9fdae">
+		<column name="MemberNum" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+	</property>
+	<property name="StartDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="1ce40ab1-2fab-4ecb-b770-3d156c8a9d3e">
+		<column name="StartDate" not-null="false" sql-type="date" unicode="false" />
+	</property>
+	<property name="EndDate" type="DateTime" nullable="true" ValidateRequired="false" Guid="ddbcc401-e928-412a-b035-f3c637f6471b">
+		<column name="EndDate" not-null="false" sql-type="date" unicode="false" />
+	</property>
+	<property name="Description" type="String" nullable="true" ValidateRequired="false" Guid="51037649-2254-4ea7-859e-8de549e0f521">
+		<column name="Description" not-null="false" sql-type="nvarchar" unicode="true" />
+	</property>
+	<many-to-one name="Cofer_CoferID" class="Cofer" AssociationGuid="93060a83-b58d-449d-9af8-058a714682b4" Guid="9a5e994b-6c07-411c-8d2c-270a0b014795">
+		<column name="CoferID" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+	</many-to-one>
+	<many-to-one name="Status_Status" class="Status" AssociationGuid="b30e5561-e80f-4875-bbc5-639ba1e1f7f7" Guid="17b66bf9-1668-4f18-98cf-7afbca2c8c8f">
+		<column name="Status" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+	</many-to-one>
+	<many-to-one name="User_Admin" class="User" AssociationGuid="0ec163d3-27ca-4fb2-9fbb-e114cd9106ed" Guid="6d25d27f-cd46-40dc-8599-1661f961421c">
+		<column name="Admin" not-null="false" precision="10" scale="0" sql-type="int" unicode="false" />
+	</many-to-one>
+</class>
