@@ -5,6 +5,16 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+	
+	<ItemGroup>
+		<None Remove="Mapping\dbo\Loan.hbm.xml" />
+		<None Remove="Mapping\dbo\Status.hbm.xml" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Mapping\dbo\Loan.hbm.xml" />
+		<EmbeddedResource Include="Mapping\dbo\Status.hbm.xml" />
+	</ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="NHibernate" Version="5.5.0" />

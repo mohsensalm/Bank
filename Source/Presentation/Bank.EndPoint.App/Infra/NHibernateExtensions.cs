@@ -26,7 +26,7 @@ public static class NHibernateExtensions
             c.Dialect<NHibernate.Dialect.MsSql2012Dialect>();
             c.ConnectionString = connectionString;
             //c.KeywordsAutoImport = Hbm2DDLKeyWords.AutoQuote;
-            //c.SchemaAction = SchemaAutoAction.Validate;
+            c.SchemaAction = SchemaAutoAction.Validate;
             //c.LogFormattedSql = true;
             //c.LogSqlInConsole = true;
         });
