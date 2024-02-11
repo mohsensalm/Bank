@@ -38,6 +38,17 @@ namespace Bank.EndPoint.App.Controllers
 
         }
 
+        [HttpGet]
+        public Loan? GetByID(int id)
+        {
+
+            var loan = _unitOfWork.LoanRepository.Get(id);
+            if (loan.IsValid(loan) != true)
+            {
+                return null;
+            }
+            return loan;
+        }
 
     }
 }

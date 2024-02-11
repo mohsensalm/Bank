@@ -10,5 +10,16 @@ namespace Domain.Base
     {
         public DateTime CreateDateTime { get; set; }
         public DateTime UpdateDateTime { get; set; }
+
+
+        public bool IsValid(BaseEntity entity)
+        {
+            if (entity == null)
+                return false;
+
+            else
+                return true;
+
+        }
     }
 }
