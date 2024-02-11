@@ -9,14 +9,23 @@ using System.Threading.Tasks;
 
 namespace Application.Base.Entity.dbo
 {
-    internal class StatusRepository : BaseRepository<Status> , IStatusRepository
+    internal class StatusRepository(ISession session) : BaseRepository<Status>(session), IStatusRepository
     {
-        private ISession session;
+        private readonly ISession _session = session;
 
-        public StatusRepository(ISession session) : base(session)
+        public Status GetByCode(byte code)
         {
 
+            var res = _session.Query<Status>().Where(x => x.ID == code).FirstOrDefault();
+            if (res == null || res.IsValid(res) == false)
+
+                return null;
+
+            else
+
+                return res;
+
         }
-       
+
     }
 }

@@ -7,7 +7,7 @@ namespace Bank.EndPoint.App.Controllers
 {
     public class LoanController : Controller
     {
-        IUnitOfWork _unitOfWork;
+        readonly IUnitOfWork _unitOfWork;
         public IActionResult Index()
         {
             return View();
@@ -39,11 +39,11 @@ namespace Bank.EndPoint.App.Controllers
         }
 
         [HttpGet]
-        public Loan? GetByID(int id)
+        public Loan GetByID(int id)
         {
 
             var loan = _unitOfWork.LoanRepository.Get(id);
-            if (loan.IsValid(loan) != true)
+            if (loan == null || loan.IsValid(loan)==false)
             {
                 return null;
             }

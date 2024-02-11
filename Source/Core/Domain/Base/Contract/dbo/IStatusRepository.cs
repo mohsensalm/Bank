@@ -10,7 +10,7 @@ namespace Domain.Base.Contract.dbo
 
     public interface IStatusRepository : IBaseRepository<Status>
     {
-
+        Status GetByCode(byte code);
 
     }
 }
